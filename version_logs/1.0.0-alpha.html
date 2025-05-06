@@ -1,0 +1,52 @@
+<body>
+    <div class="container">
+
+        <div class="h6 ms-2 mb-0 fw-bold">Version 1.0.0-alpha</div>
+        <p class="text-muted fs-6 ms-2 mt-0">28 April 2025</p>
+        <ul class="list-groups list-group">
+            <!--Features-->
+            <li class="list-group-item d-flex justify-content-between align-items-start ms-2">
+                <div class="me-auto">
+                    <div class="fw-bold">Features</div>
+                    <div class="ms-4"></div>
+                    <div class="ms-4">Review portfolio composition</div>
+                    <div class="ms-4">Review own portfolio list</div>
+                    <div class="ms-4">Backend data validation: Model is validated now in the api and data layers</div>
+                    <div class="ms-4">Admin page created</div>
+                    <div class="ms-4">Implemented JWT</div>
+                    <div class="ms-4">Dynamic default avatars when avatar is null thanks to https://avatar-placeholder.iran.liara.run/</div>
+                    <div class="ms-4">Now icons and avatars are stored as a Global Unique Identifiers</div>
+                    <div class="ms-4">Now the client does not have to worry about missmatches between IconPath and IconByteArr, there is an icon in the client and the backend manages it autonomously </div>
+                    <div class="ms-4">Now avatar and icons accept jpg, png and svg, this is managed in the backend</div>
+                    <div class="ms-4">Users now have roles: User and Admin</div>
+                    <div class="ms-4">Active as property in UserService</div>
+                </div>
+            </li>
+            <!--UI-->
+            <li class="list-group-item d-flex justify-content-between align-items-start ms-2">
+                <div class="me-auto">
+                    <div class="fw-bold">UI</div>
+                    <div class="ms-4">Layouts: MainLayout + LoginLayout</div>
+                    <div class="ms-4">Automatic navigation after user login, sign in, update and delete</div>
+                </div>
+            </li>
+            <!--Bugfix-->
+            <li class="list-group-item d-flex justify-content-between align-items-start ms-2">
+                <div class="me-auto">
+                    <div class="fw-bold">Bugfix</div>
+                    <div class="ms-4">Fixed CRUD operations when null icon property</div>
+                    <div class="ms-4">Old images stored in the server now are properly deleted when entity creation/update/delete</div>
+                    <div class="ms-4">Null control in the api layer now works</div>
+                    <div class="ms-4">Fixed yellow notifications when null objects in the code behind</div>
+                    <div class="ms-4">Fixed nav scheme not working after register user</div>
+                    <div class="ms-4">Fixed inconsistency with constructors: now everything is primary constructor</div>
+                    <div class="ms-4">Now local storage and former ActiveUser memory objects are properly deleted when log out</div>
+                    <div class="ms-4">Fixed inconsistency with NavigationManager, now is always in the code behind (not VM) and called with delegates</div>
+                    <div class="ms-4">Fixed redundant delegate calls in the viewmodels</div>
+                    <div class="ms-4">User service overhauled</div>
+                </div>
+            </li>
+        </ul>    
+            
+    </div>
+</body>

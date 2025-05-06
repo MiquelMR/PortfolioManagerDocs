@@ -1,0 +1,47 @@
+<!--Content-->
+<div class="container-fluid">
+    <div class="row">
+        <!--Content-->
+        <div class="container-fluid p-0 m-0">
+
+            <!--Header-->
+            <div class="row justify-content-between">
+
+                <!--Dropdown and hint-->
+                <div class="col-auto">
+                    <div class="row">
+
+                        <!--Dropdown-->
+                        <div class="col-auto pe-0 dropdown">
+                            <!--Dropdown button-->
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown">
+                                <b>MODEL</b>
+                            </button>
+                            <!--Dropdown options-->
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-bs-auto-close="false">
+                                <li>
+                                    <a class="dropdown-item" href="#" onclick="loadEndpointTable('assets')">Assets</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" onclick="loadEndpointTable('portfolios')">Portfolios</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" onclick="loadEndpointTable('users')">Users</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--Text-->
+                        <p class="col-auto p-1">Sorted by model</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Endpoint Table-->
+            <section class="col-12" id="endpoint_table">
+        </div>
+
+    </div>
+</div>
+</div>

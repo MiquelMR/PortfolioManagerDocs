@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio Manager docs</title>
+
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+        <!--JS-->
+        <script src="js/script.js" defer></script>
+        <script src="js/bootstrap.bundle.min.js" defer></script>
+        
+        <!--CSS-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>    
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Sidebar -->
+                <nav class="col-md-3 col-lg-2 d-flex flex-column bg-dark text-white vh-100 p-3">
+                    <h2 class="text-center">Menu</h2>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadContent('features')">Features</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadContent('api')">Api</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadContent('validations')">Validations</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadContent('devLog')">Dev Log</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#" onclick="loadContent('client_testing')">Client Testing</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Main Content -->
+                    <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+                        <!--Header-->
+                        <header>
+                            <h1 class="mt-4 mb-0">Portfolio Manager</h1>
+                            <p class="fst-italic">Version 1.0.0-alpha</p>
+                        </header>
+                        <!--Content-->
+                        <section class="col-6" id="content"></div>
+                    </main>
+
+            </div>
+
+        </div>
+    </body>
+</html>

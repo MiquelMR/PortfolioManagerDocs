@@ -1,0 +1,286 @@
+<!--Endpoint table-->
+<div class="container p-0 m-0 mt-4">
+    <div class="row">
+        <div class="col-auto">
+            <p class="h5 mb-0 fw-bold">Controller : Users</p>
+            <p class="mb-0 fst-italic">Route : api / users</p>
+        </div>
+        <div class="col-auto">
+        </div>
+    </div>
+
+    <!--Controller users-->
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>HTTP Method</th>
+                <th>Endpoint URL</th>
+                <th>Request Payload</th>
+                <th>Return Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="fw-bold">GET</td>
+                <td class="fw-bold">by-email / email</td>
+                <td>userEmail : string</td>
+                <td>UserDto</td>
+                <td>Get the user by its userId</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">PUT</td>
+                <td class="fw-bold"></td>
+                <td>updateUserDto</td>
+                <td>updateUserDto</td>
+                <td>Update the user</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">DELETE</td>
+                <td class="fw-bold"></td>
+                <td>userEmail : string</td>
+                <td>-</td>
+                <td>Delete the user</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">PUT</td>
+                <td class="fw-bold"></td>
+                <td>UserRegisterDto</td>
+                <td>userDto</td>
+                <td>Register a new user</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">POST</td>
+                <td class="fw-bold"></td>
+                <td>loginUserDto</td>
+                <td>userDto</td>
+                <td>Check credentials and login</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container-fluid">
+
+        <p class="h3 mb-0 fw-bold">Testing</p>
+        <p class="mb-0">Tester : Miquel Mauri</p>
+        <p class=" fs-6">Tool : Swagger</p>
+        <h5><span class="badge bg-secondary">GET : api / users / by-email /{ userEmail }</span></h5>
+
+        <!--Cases-->
+        <h6>CASE #1 : GET ENTITY</h6>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Request Payload</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fw-bold">irinaMijailovna@gmail.com</td>
+                    <td>UserDto</td>
+                    <td class="tooltip-container">UserDto <i class="fas fa-info-circle"></i><span class="tooltip-text">
+                            Response body
+                            Download
+                            {
+                            "statusCode": 200,
+                            "message": "User created successfully",
+                            "data": {
+                            "name": "Irina",
+                            "registrationDate": "0001-01-01T00:00:00",
+                            "email": "irinaMijailovna@gmail.com",
+                            "avatar": "Omitted",
+                            role": 1
+                            }
+                            }</span></td>
+                    <td class="text-success fw-bold">Success</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Case-->
+        <h6>CASE #2 : GET ENTITY THAT DON'T EXISTS</h6>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Request Payload</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tooltip-container">test1@gmail.com</td>
+                    <td>Not found</td>
+                    <td class="tooltip-container">Not Found <i class="fas fa-info-circle"></i><span
+                            class="tooltip-text">
+                            {
+                            "statusCode": 404,
+                            "message": "Asset not found",
+                            "data": null
+                            }</span></td>
+                    <td class="text-success fw-bold">Success</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h5><span class="badge bg-secondary">PUT : api / users</span></h5>
+        <!--Case-->
+        <h6>CASE #3 : UPDATE USER</h6>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Request Payload</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tooltip-container">"irinaMijailovna"</td>
+                    <td>UserDto</td>
+                    <td class="tooltip-container">UserDto <i class="fas fa-info-circle"></i><span class="tooltip-text">
+                            {
+                            "statusCode": 200,
+                            "message": "User updated successfully",
+                            "data": {
+                            "name": "Irina Mijailovna",
+                            "registrationDate": "0001-01-01T00:00:00",
+                            "email": "irinaMijailovna@gmail.com",
+                            "avatar": "",
+                            "role": 0
+                            }
+                            }</span></td>
+                    <td class="text-success fw-bold">Success</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h5><span class="badge bg-secondary">DELETE : api / users / { userEmail }</span></h5>
+        <!--Case-->
+        <h6>CASE #4 : DELETE USER</h6>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Request Payload</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tooltip-container">userEmail</td>
+                    <td></td>
+                    <td class="tooltip-container">- <i class="fas fa-info-circle"></i><span class="tooltip-text">
+                            {
+                            "statusCode": 200,
+                            "message": "Success",
+                            "data": null
+                            }</span></td>
+                    <td class="text-success fw-bold">Success</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h5><span class="badge bg-secondary">POST : api / users / register</span></h5>
+        <!--Case-->
+        <h6>CASE #5 : REGISTER USER</h6>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Request Payload</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tooltip-container">RegisterUserDto</td>
+                    <td>UserDto</td>
+                    <td class="tooltip-container">UserDto <i class="fas fa-info-circle"></i><span class="tooltip-text">
+                            {
+                            "statusCode": 200,
+                            "message": "Success",
+                            "data": {
+                            "name": "string",
+                            "registrationDate": "0001-01-01T00:00:00",
+                            "email": "user@example.com",
+                            "avatar": "",
+                            "role": 0
+                            }
+                            }</span></td>
+                    <td class="text-success fw-bold">Success</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Case-->
+        <h5><span class="badge bg-secondary">POST : api / users / login</span></h5>
+        <h6>CASE #6 : LOGIN</h6>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Request Payload</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tooltip-container">UserLoginDto</td>
+                    <td>LoginResponse</td>
+                    <td class="tooltip-container">LoginResponse <i class="fas fa-info-circle"></i><span
+                            class="tooltip-text">
+                            {
+                            "statusCode": 200,
+                            "message": "Authorized",
+                            "data": {
+                            "userLoginDto": {
+                            "password":
+                            "$argon2id$v=19$m=65536,t=3,p=1$NZ/CrFMoZxN8xoTzAsK3Vw$6C6AsPDvRheNrQ+pKNh7qsKQtTw1ZmAbeOkOUDcpOQE",
+                            "email": "user@example.com"
+                            },
+                            "token": "Omitted"
+                            }
+                            }</span></td>
+                    <td class="text-success fw-bold">Success</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Case-->
+        <h6>CASE #7 : LOGIN WRONG PASSWORD</h6>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Request Payload</th>
+                    <th>Expected</th>
+                    <th>Actual</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tooltip-container">UserLoginDto</td>
+                    <td>LoginResponse</td>
+                    <td class="tooltip-container">LoginResponse <i class="fas fa-info-circle"></i><span
+                            class="tooltip-text">
+                            {
+                            "statusCode": 401,
+                            "message": "Invalid credentials : Login failed",
+                            "data": null
+                            }</span></td>
+                    <td class="text-success fw-bold">Success</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,247 @@
+<!--Endpoint table-->
+<div class="container p-0 m-0 mt-4">
+    <div class="row">
+        <div class="col-auto">
+            <p class="h5 mb-0 fw-bold">Controller : Assets</p>
+            <p class="mb-0 fst-italic">Route : api / assets</p>
+        </div>
+        <div class="col-auto">
+        </div>
+    </div>
+
+    <!--Controller asset-->
+    <div class="container-fluid">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>HTTP Method</th>
+                    <th>Endpoint URL</th>
+                    <th>Request Payload</th>
+                    <th>Return Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fw-bold">GET</td>
+                    <td></td>
+                    <td></td>
+                    <td>List&lt;AssetDto</td>
+                    <td>Get all the assets</td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">POST</td>
+                    <td></td>
+                    <td>AssetDto</td>
+                    <td>AssetDto</td>
+                    <td>Create asset</td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">PATCH</td>
+                    <td></td>
+                    <td>AssetDto</td>
+                    <td>AssetDto</td>
+                    <td>Update asset</td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">DELETE</td>
+                    <td><b>assetId</b></td>
+                    <td><b>assetId</b> : int</td>
+                    <td>Boolean</td>
+                    <td>Delete asset</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        
+        <div>
+            <div class="container-fluid">
+                
+                <p class="h3 mb-0 fw-bold">Testing</p>
+                <p class="mb-0">Tester : Miquel Mauri</p>
+                <p class=" fs-6">Tool : Swagger</p>
+                <h5><span class="badge bg-secondary">GET : api / assets</span></h5>
+                
+                <!--Cases-->
+            <h6>CASE #1 : GET ALL ENTITIES</h6>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Request Payload</th>
+                        <th>Expected</th>
+                        <th>Actual</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">-</td>
+                        <td>List&lt;AssetDto</td>
+                        <td class="tooltip-container">List&lt;AssetDto <i class="fas fa-info-circle"></i><span
+                                class="tooltip-text">
+                                Response body
+                                Download
+                                {
+                                "statusCode": 200,
+                                "message": "Success",
+                                "data": [
+                                {
+                                "assetId": 8,
+                                "name": "Private Equity",
+                                "icon": null
+                                },
+                                {
+                                "assetId": 9,
+                                "name": "Collectibles",
+                                "icon": null
+                                },
+                                }</span></td>
+                        <td class="text-success fw-bold">Success</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <h5><span class="badge bg-secondary">POST : api / assets</span></h5>
+            <!--Case-->
+            <h6>CASE #2 : CREATE ENTITY</h6>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Request Payload</th>
+                        <th>Expected</th>
+                        <th>Actual</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tooltip-container">AssetDto <i class="fas fa-info-circle"></i><span
+                            class="tooltip-text">
+                            {
+                                "assetId": 0,
+                                "name": "TEST"
+                              }</span></td>
+                        <td>AssetDto</td>
+                        <td class="tooltip-container">AssetDto <i class="fas fa-info-circle"></i><span
+                                class="tooltip-text">
+                                {
+                                    "statusCode": 200,
+                                    "message": "Asset created successfully",
+                                    "data": {
+                                      "assetId": 0,
+                                      "name": "TEST",
+                                      "icon": null
+                                    }
+                                  }</span></td>
+                        <td class="text-success fw-bold">Success</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <!--Case-->
+            <h6>CASE #3 : CREATE ENTITY UNVALID REQUEST PAYLOAD</h6>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Request Payload</th>
+                        <th>Expected</th>
+                        <th>Actual</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tooltip-container">AssetDto no_name <i class="fas fa-info-circle"></i><span
+                            class="tooltip-text">
+                            {
+                                "assetId": 0
+                              }</span></td>
+                        <td>The Name field is required</td>
+                        <td class="tooltip-container">AssetDto <i class="fas fa-info-circle"></i><span
+                                class="tooltip-text">
+                                {
+                                    "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+                                    "title": "One or more validation errors occurred.",
+                                    "status": 400,
+                                    "errors": {
+                                      "Name": [
+                                        "The Name field is required."
+                                      ]
+                                    },
+                                    "traceId": "00-3f07231ac0f4936c1ea8b06f2817fcdf-f04eb27f0606cbb8-00"
+                                  }</span></td>
+                        <td class="text-success fw-bold">Success</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <!--Case-->
+            <h5><span class="badge bg-secondary">PUT : api / assets</span></h5>
+            <h6>CASE #4 : UPDATE ENTITY</h6>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Request Payload</th>
+                        <th>Expected</th>
+                        <th>Actual</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tooltip-container">AssetDto <i class="fas fa-info-circle"></i><span
+                            class="tooltip-text">
+                            {
+                                "assetId": 8,
+                                "name": "Private Equities"
+                              }</span></td>
+                        <td>AssetDto</td>
+                        <td class="tooltip-container">AssetDto <i class="fas fa-info-circle"></i><span
+                                class="tooltip-text">
+                                {
+                                    "statusCode": 200,
+                                    "message": "Asset updated successfully",
+                                    "data": {
+                                      "assetId": 8,
+                                      "name": "Private Equities",
+                                      "icon": null
+                                    }
+                                  }</span></td>
+                        <td class="text-success fw-bold">Success</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Database name changes from Private Equity to Private Equities</p>
+    
+            <!--Case-->
+            <h5><span class="badge bg-secondary">DELETE : api / assets</span></h5>
+            <h6>CASE #5 : DELETE ENTITY</h6>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Request Payload</th>
+                        <th>Expected</th>
+                        <th>Actual</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tooltip-container">19 : assetId
+                        <td>-</td>
+                        <td class="tooltip-container">AssetDto <i class="fas fa-info-circle"></i><span
+                                class="tooltip-text">
+                                {
+                                    "statusCode": 200,
+                                    "message": "Asset deleted successfully",
+                                    "data": null
+                                  }</span></td>
+                        <td class="text-success fw-bold">Success</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Asset with assetId = 19 is deleted</p>
+        </div>
+    </div>
+
+</div>

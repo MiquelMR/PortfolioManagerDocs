@@ -1,0 +1,193 @@
+<!--Content-->
+<section class="col-6" id="content">
+    <div class="h4">Client-side Testing</div>
+    <div class="fst-italic">Testing on the client side</div>
+
+    <!--Test-->
+    <div class="mt-4"><b># Logging In</b></div>
+    <div class="fst-italic">The user attempts to log in from the login screen</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>_service:ActiveUser contains the user object</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Token contains the user token</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Email contains the user email</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>Navigates to Home page automatically</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>The homepage navbar displays the user's avatar and name</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--Test-->
+    <div><b># Logging Out</b></div>
+    <div class="fst-italic">The user logs out</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>_service:ActiveUser is null</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Token is null</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Email is null</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>Navigates to Login page automatically</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--Test-->
+    <div><b># Registering an Account</b></div>
+    <div class="fst-italic">The user attempts to register in the app</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>_service:ActiveUser contains the user object</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Token contains the user token</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Email contains the user email</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>Navigates to Home page automatically</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>An unsuccessful registration does not navigate to the Home page automatically
+                </td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>The new user is able to log in</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>he user's avatar is stored on the server</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>Validation: Name can't be empty</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>Validation: Avatar can be empty</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>Validation: Email can't already exist</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--Test-->
+    <div><b># Deleting an Account</b></div>
+    <div class="fst-italic">The user attempts to delete their account</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>_service:ActiveUser is null</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Token is null</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>_localStorage.Email is null</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>Navigates to Login page automatically</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>The user's avatar is deleted from the server</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>The user is deleted in the database</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--Test-->
+    <div><b># Updating an Account</b></div>
+    <div class="fst-italic">The user attempts to update their Account</div>
+    <table class="table table-bordered">
+        <thead>
+            <th>Condition</th>
+            <th>Result</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Navigates to Login page automatically</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>The user is deleted in the database</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>A new avatar, if available, is stored on the server.</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>The old avatar, if available, is deleted from the server</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+            <tr>
+                <td>The user's information is updated in the database</td>
+                <td class="text-success fw-bold">Success</td>
+            </tr>
+        </tbody>
+    </table>
