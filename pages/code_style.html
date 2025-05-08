@@ -1,0 +1,55 @@
+<!--Header-->
+<div>
+    <div class="row">
+        <div class="h3"># Data layer : Services and Repositories </div>
+
+        <!--General rules-->
+        <div class="ms-4">- Services and repositories follow the same naming ruleset</div>
+        <div class="ms-4">- Methods should appear in the order defined here</div>
+        <div class="ms-4">- The order of appearance in the interface and inherited class should be the same</div>
+
+        <!--Method naming ruleseet-->
+        <div class="h4 mt-4">## Method naming ruleset</div>
+        <div class="row ms-4">
+
+            <p class="mb-0"><b>Operation on a single entity : </b>
+                <b style="color: gray;">OperationVerb</b><b style="color: green;">Entity</b>
+            </p>
+            <p class="fst-italic">Example : <b style="color: gray;">Update</b><b style="color: green;">User</b></p>
+
+            <p class="mb-0"><b>Operation on a single entity with filter : </b>
+                <b style="color: gray;">OperationVerb</b><b style="color: green;">Entity</b>By<b
+                    style="color: Blue;">Property</b>
+            </p>
+            <p class="fst-italic">Example : <b style="color: gray;">Get</b><b style="color: green;">User</b>By<b
+                    style="color: Blue;">UserId</b></p>
+
+            <p class="mb-0"><b>Operation on multiple entities : </b>
+                <b style="color: gray;">OperationVerb</b><b style="color: green;">Entities</b>
+            </p>
+            <p class="fst-italic">Example : <b style="color: gray;">Get</b><b style="color: green;">Users</b></p>
+
+            <p class="mb-0"><b>Utility Methods : </b>
+                <b style="color: gray;">OperationVerb</b>By<b style="color: Blue;">Property</b>
+            </p>
+            <p class="fst-italic">Example : <b style="color: gray;">Exists</b>By<b style="color: Blue;">Email</b>
+            </p>
+
+            <div>
+
+                <p><b>Methods should appear in the following order</b></p>
+                <ol>
+                    <li>Get single entity</li>
+                    <li>Get multiple entities</li>
+                    <li>Get multiple entities by filter</li>
+                    <li>Create</li>
+                    <li>Update</li>
+                    <li>Delete</li>
+                    <li>Public Utilities</li>
+                    <li>Private Utilities</li>
+
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
